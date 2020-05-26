@@ -24,7 +24,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer> -->
-    <!-- <v-app-bar
+    <v-app-bar
       :clipped-left="clipped"
       fixed
       app
@@ -56,7 +56,7 @@
       >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
-    </v-app-bar> -->
+    </v-app-bar>
     <v-content>
       <v-container>
         <nuxt />
@@ -110,7 +110,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: '曾梓鑫的博客'
+      title: '博客'
     }
   }
 }
