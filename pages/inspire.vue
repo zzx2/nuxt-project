@@ -1,19 +1,64 @@
 <template>
-  <v-layout>
-    <v-flex class="text-center">
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
+  <v-layout
+    column
+    justify-center
+    align-center
+  >
+    <v-flex
+      xs12
+      sm8
+      md6
+    >
+      <v-card
+        class="mx-auto"
+        max-width="400"
       >
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
+        <v-img
+          class="white--text align-end"
+          height="200px"
+          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+        >
+          <v-card-title>Top 10 Australian beaches</v-card-title>
+        </v-img>
+
+        <v-card-subtitle class="pb-0">
+          Number 10
+        </v-card-subtitle>
+
+        <v-card-text class="text--primary">
+          <div>Whitehaven Beach</div>
+
+          <div>Whitsunday Island, Whitsunday Islands</div>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-btn
+            color="orange"
+            text
+          >
+            Share
+          </v-btn>
+
+          <v-btn
+            color="orange"
+            text
+          >
+            Explore
+          </v-btn>
+        </v-card-actions>
+      </v-card>
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+// import Logo from '~/components/Logo.vue'
+// import VuetifyLogo from '~/components/VuetifyLogo.vue'
+
+export default {
+  components: {
+    // Logo,
+    // VuetifyLogo
+  }
+}
+</script>

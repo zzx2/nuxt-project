@@ -4,61 +4,48 @@
     justify-center
     align-center
   >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <v-card
-        class="mx-auto"
-        max-width="400"
+    <v-carousel v-model="model">
+      <v-carousel-item
+        v-for="(color, i) in colors"
+        :key="color"
       >
-        <v-img
-          class="white--text align-end"
-          height="200px"
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+        <v-sheet
+          :color="color"
+          height="100%"
+          tile
         >
-          <v-card-title>Top 10 Australian beaches</v-card-title>
-        </v-img>
-
-        <v-card-subtitle class="pb-0">
-          Number 10
-        </v-card-subtitle>
-
-        <v-card-text class="text--primary">
-          <div>Whitehaven Beach</div>
-
-          <div>Whitsunday Island, Whitsunday Islands</div>
-        </v-card-text>
-
-        <v-card-actions>
-          <v-btn
-            color="orange"
-            text
+          <v-row
+            class="fill-height"
+            align="center"
+            justify="center"
           >
-            Share
-          </v-btn>
-
-          <v-btn
-            color="orange"
-            text
-          >
-            Explore
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
+            <div class="text-h2">
+              Slide {{ i + 1 }}
+            </div>
+          </v-row>
+        </v-sheet>
+      </v-carousel-item>
+    </v-carousel>
   </v-layout>
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
-// import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
   components: {
-    // Logo,
-    // VuetifyLogo
+
+  },
+  data () {
+    return {
+      colors: [
+        'primary',
+        'secondary',
+        'yellow darken-2',
+        'red',
+        'orange'
+      ],
+      model: 0
+    }
   }
 }
 </script>
