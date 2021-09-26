@@ -1,5 +1,7 @@
+import { getUserInfo } from '~/api/user'
+import { setStorage, getStorage } from '~/utils/storage'
 export const state = () => ({
-  userinfo: {}
+  userinfo: getStorage('userinfo')
 })
 
 export const mutations = {
@@ -8,8 +10,18 @@ export const mutations = {
   }
 }
 
-export const action = {
-  getUserInfo () {
+export const actions = {
+  getUserInfo ({ commit }) {
+    return new Promise((resolve, reject) => {
+      getUserInfo().then((res) => {
+        console.log(res)
 
+        setStorage('userinfo', res.data)
+        commit('SET_USERINFO', res.data)
+        resolve(res.data)
+      }).catch((err) => {
+        reject(err)
+      })
+    })
   }
 }

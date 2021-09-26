@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:30001',
+  baseURL: 'http://127.0.0.1:3001',
   timeout: 30 * 1000
 })
 request.interceptors.request.use(
@@ -17,7 +17,7 @@ request.interceptors.response.use(
   (response) => {
     // const config = response.config
     const res = response.data
-    if (res.code == 0) {
+    if (res.code === 0) {
       return Promise.resolve(res.data)
     } else {
       return Promise.reject(res.msg)
@@ -27,3 +27,5 @@ request.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+export default request
